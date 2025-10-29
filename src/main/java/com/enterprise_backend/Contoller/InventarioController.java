@@ -15,7 +15,8 @@ import java.io.File;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/inventario")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins ={"http://localhost:5173",
+        "https://enterprise-front-production.up.railway.app"})
 public class InventarioController {
 
     @Autowired

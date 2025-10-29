@@ -9,7 +9,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/empresas")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins ={"http://localhost:5173",
+        "https://enterprise-front-production.up.railway.app"})
 public class EmpresaController {
 
     private final EmpresaService service;

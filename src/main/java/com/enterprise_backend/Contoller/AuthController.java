@@ -32,7 +32,9 @@ public class AuthController {
         this.jwtUtil = jwtUtil;
         this.passwordEncoder = encoder;
     }
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins ={"http://localhost:5173",
+            "https://enterprise-front-production.up.railway.app"})
+
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
         if (request.correo() == null || request.correo().isBlank()) {
