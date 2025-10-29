@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres_enterprise
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: enterprise
+    ports:
+      - "5432:5432"
+    volumes:
+      - enterprise_data:/var/lib/postgresql/data
+    networks:
+      - enterprise-net
+
+volumes:
+  enterprise_data:
+
+networks:
+  enterprise-net:
+    driver: bridge
