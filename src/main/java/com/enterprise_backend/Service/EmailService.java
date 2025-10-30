@@ -28,7 +28,7 @@ public class EmailService {
     }
 
     public void enviarPDF(String destinatario) throws Exception {
-        byte[] pdfBytes = inventarioService.generarPDFOpen(); // ✅ PDF en memoria
+        byte[] pdfBytes = inventarioService.generarPDFOpen();
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");

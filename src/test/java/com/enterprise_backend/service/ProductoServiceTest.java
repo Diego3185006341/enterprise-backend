@@ -27,7 +27,7 @@ class ProductoServiceTest {
 
     @Test
     void listar_deberiaRetornarTodosLosProductos() {
-        // Given
+        
         Producto p1 = new Producto();
         p1.setId(1L);
         p1.setNombre("Laptop");
@@ -39,10 +39,10 @@ class ProductoServiceTest {
         List<Producto> productos = Arrays.asList(p1, p2);
         when(repository.findAll()).thenReturn(productos);
 
-        // When
+        
         List<Producto> resultado = service.listar();
 
-        // Then
+        
         assertThat(resultado).hasSize(2);
         assertThat(resultado).containsExactly(p1, p2);
         verify(repository).findAll();
@@ -50,7 +50,7 @@ class ProductoServiceTest {
 
     @Test
     void crear_deberiaGuardarYRetornarElProducto() {
-        // Given
+        
         Producto productoEntrada = new Producto();
         productoEntrada.setNombre("Teclado");
         productoEntrada.setPrecio(new BigDecimal("29.99"));
@@ -62,10 +62,10 @@ class ProductoServiceTest {
 
         when(repository.save(productoEntrada)).thenReturn(productoGuardado);
 
-        // When
+        
         Producto resultado = service.crear(productoEntrada);
 
-        // Then
+        
         assertThat(resultado.getId()).isEqualTo(1L);
         assertThat(resultado.getNombre()).isEqualTo("Teclado");
         assertThat(resultado.getPrecio()).isEqualByComparingTo(new BigDecimal("29.99")); // ✅ Correcto

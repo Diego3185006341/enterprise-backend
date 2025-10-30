@@ -60,7 +60,7 @@ public class AuthController {
         return ResponseEntity.ok(new AuthResponse(token, "Bearer", user.getCorreo()));
     }
 
-    // Endpoint para crear usuario (solo para pruebas/seed, proteger en producción)
+
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody LoginRequest request) {
         if (request.correo() == null || request.password() == null) {

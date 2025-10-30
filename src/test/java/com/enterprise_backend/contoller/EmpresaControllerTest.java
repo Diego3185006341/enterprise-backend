@@ -1,9 +1,8 @@
 package com.enterprise_backend.contoller;
+
 import com.enterprise_backend.Contoller.EmpresaController;
 import com.enterprise_backend.Entity.Empresa;
 import com.enterprise_backend.Service.EmpresaService;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -26,7 +25,7 @@ class EmpresaControllerUnitTest {
 
     @Test
     void listar_deberiaRetornarTodasLasEmpresas() {
-        // Given
+        
         Empresa emp1 = new Empresa();
         emp1.setNit("1");
         emp1.setNombre("Empresa A");
@@ -41,14 +40,14 @@ class EmpresaControllerUnitTest {
         // When
         List<Empresa> resultado = controller.listar();
 
-        // Then
+        
         assertThat(resultado).hasSize(2);
         assertThat(resultado.get(0).getNombre()).isEqualTo("Empresa A");
     }
 
     @Test
     void crear_deberiaDelegarEnElServicio() {
-        // Given
+        
         Empresa entrada = new Empresa();
         entrada.setNombre("Nueva");
 
@@ -57,10 +56,10 @@ class EmpresaControllerUnitTest {
         guardada.setNombre("Nueva");
         when(service.crear(entrada)).thenReturn(guardada);
 
-        // When
+        
         Empresa resultado = controller.crear(entrada);
 
-        // Then
+        
         assertThat(resultado.getNit()).isEqualTo("1");
         assertThat(resultado.getNombre()).isEqualTo("Nueva");
     }

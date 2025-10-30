@@ -70,7 +70,7 @@ class EmpresaServiceTest {
         verify(repository).deleteById("123"); // ¡Convierte Long a String!
     }
 
-    // === actualizar() ===
+
 
     @Test
     void actualizar_deberiaActualizarCamposYGuardar() {
@@ -100,10 +100,10 @@ class EmpresaServiceTest {
         when(repository.findById(nit)).thenReturn(Optional.of(existente));
         when(repository.save(any(Empresa.class))).thenReturn(guardada);
 
-        // When
+
         Empresa resultado = service.actualizar(datosActualizados);
 
-        // Then
+
         assertThat(resultado.getNombre()).isEqualTo("Nuevo Nombre");
         assertThat(resultado.getDireccion()).isEqualTo("Nueva Direccion");
         assertThat(resultado.getTelefono()).isEqualTo("222");
@@ -128,10 +128,10 @@ class EmpresaServiceTest {
         when(repository.findById("nuevo-nit")).thenReturn(Optional.empty());
         when(repository.save(any(Empresa.class))).thenReturn(guardada);
 
-        // When
+
         Empresa resultado = service.actualizar(datosActualizados);
 
-        // Then
+
         assertThat(resultado.getNit()).isEqualTo("nuevo-nit");
         assertThat(resultado.getNombre()).isEqualTo("Empresa Nueva");
         verify(repository).findById("nuevo-nit");
