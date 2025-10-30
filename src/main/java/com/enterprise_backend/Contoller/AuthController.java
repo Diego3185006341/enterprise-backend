@@ -32,8 +32,11 @@ public class AuthController {
         this.jwtUtil = jwtUtil;
         this.passwordEncoder = encoder;
     }
-    @CrossOrigin(origins ={"http://localhost:5173",
-            "https://enterprise-front-production.up.railway.app"})
+    @CrossOrigin(origins = {
+            "http://localhost:5173",
+            "https://enterprise-front.vercel.app" // 👈 agrega este
+    }, allowCredentials = "true")
+
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
