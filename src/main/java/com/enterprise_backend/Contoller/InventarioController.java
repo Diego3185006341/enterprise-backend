@@ -15,8 +15,12 @@ import java.io.File;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/inventario")
-@CrossOrigin(origins ={"http://localhost:5173",
-        "https://enterprise-front-production.up.railway.app"})
+@CrossOrigin(origins = {
+        "http://localhost:5173",
+        "https://enterprise-front-tau.vercel.app",
+        "https://enterprise-front-git-master-diegos-projects-f8b66fa6.vercel.app",
+        "https://enterprise-front-n8n5ig5ao-diegos-projects-f8b66fa6.vercel.app"
+}, allowCredentials = "true")
 public class InventarioController {
 
     @Autowired
@@ -28,8 +32,7 @@ public class InventarioController {
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<byte[]> descargarPDF() {
         try {
-            byte[] pdf = inventarioService.generarPDFOpen(); // 👈 aquí se llama el service
-
+            byte[] pdf = inventarioService.generarPDFOpen();
             return ResponseEntity.ok()
                     .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=inventario.pdf")
                     .contentType(MediaType.APPLICATION_PDF)

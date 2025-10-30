@@ -11,8 +11,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/productos")
-@CrossOrigin(origins ={"http://localhost:5173",
-        "https://enterprise-front-production.up.railway.app"})
+@CrossOrigin(origins = {
+        "http://localhost:5173",
+        "https://enterprise-front-tau.vercel.app",
+        "https://enterprise-front-git-master-diegos-projects-f8b66fa6.vercel.app",
+        "https://enterprise-front-n8n5ig5ao-diegos-projects-f8b66fa6.vercel.app"
+}, allowCredentials = "true")
 public class ProductoController {
     private final ProductoService service;
 
