@@ -58,7 +58,10 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:5173","https://enterprise-front-production.up.railway.app"
+        configuration.setAllowedOrigins(List.of("http://localhost:5173","https://enterprise-front-tau.vercel.app",
+                "https://enterprise-front-git-master-diegos-projects-f8b66fa6.vercel.app",
+                "https://enterprise-front-n8n5ig5ao-diegos-projects-f8b66fa6.vercel.app"
+
         ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
