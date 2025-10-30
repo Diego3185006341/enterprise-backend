@@ -34,7 +34,7 @@ public class AuthController {
     }
     @CrossOrigin(origins = {
             "http://localhost:5173",
-            "https://enterprise-front.vercel.app" // 👈 agrega este
+            "https://enterprise-front-n8n5ig5ao-diegos-projects-f8b66fa6.vercel.app" // 👈 agrega este
     }, allowCredentials = "true")
 
 
