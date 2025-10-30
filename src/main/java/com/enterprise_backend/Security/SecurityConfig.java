@@ -61,7 +61,7 @@ public class SecurityConfig {
         configuration.setAllowedOrigins(List.of("http://localhost:5173","https://enterprise-front-tau.vercel.app",
                 "https://enterprise-front-git-master-diegos-projects-f8b66fa6.vercel.app",
                 "https://enterprise-front-n8n5ig5ao-diegos-projects-f8b66fa6.vercel.app",
-                "enterprise-front-z2jz.vercel.app"
+                "https://enterprise-front-z2jz.vercel.app"
 
 
         ));
